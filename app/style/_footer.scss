@@ -1,0 +1,94 @@
+.footer {
+   background: lighten(black, 25%);
+   .contain {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      @media all and (max-width: 40rem) {
+         flex-direction: column;
+      }
+   }
+
+   &__icons {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @media all and (max-width: 40rem) {
+         align-items: center;
+         margin-top: 1.5rem;
+      }
+      a {
+         color: darken(white, 10%);
+         margin-left: 0.5rem;
+         font-size: 17px;
+      }
+      div {
+         padding: 0.6rem;
+      }
+
+      .yt {
+         transition: all 100ms ease-in-out;
+         &:hover svg path {
+            fill: lighten(red, 10%);
+         }
+         &:hover a {
+            background: linear-gradient(to right, rgb(236, 189, 189), lighten(red, 10%));
+            background-clip: text;
+            color: transparent;
+         }
+      }
+      .in {
+         transition: all 100ms ease-in-out;
+
+         &:hover svg path {
+            fill: darken(pink, 30%);
+         }
+         &:hover a {
+            background: linear-gradient(to right, darken(yellow, 5%), darken(pink, 25%));
+            background-clip: text;
+            color: transparent;
+         }
+      }
+   }
+
+   &__links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0 0 0;
+
+      a {
+         margin-bottom: 1.6rem;
+         color: darken(white, 10%);
+         text-align: center;
+         transition: all 100ms ease-in-out;
+
+         &:hover {
+            color: transparent;
+            background: linear-gradient(to left, lighten(grey, 10%), lighten(aquamarine, 15%) 50%);
+            background-clip: text;
+            transform: scale(1.02);
+         }
+      }
+   }
+   &__button {
+      width: 30%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+   }
+
+   &__copyright {
+      position: relative;
+      color: gray;
+      bottom: 14px;
+      right: -91%;
+      font-size: $font-sm;
+
+      @media all and (max-width: 40rem) {
+         right: -85%;
+         bottom: 11px;
+      }
+   }
+}

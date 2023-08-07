@@ -1,0 +1,52 @@
+.hero {
+    .contain {
+        display: flex;
+        align-items: center;
+        @media all and (max-width: 40rem) {
+            flex-direction: column;
+        }
+        background-color: lighten(black, 99%);
+    }
+
+    &__text {
+        text-align: center;
+        padding: 0 2.5rem;
+        flex: 2;
+        h1 {
+            color: darken(grey, 20%);
+            font-size: 2rem;
+            font-weight: 500;
+        }
+        p {
+            color: darken(grey, 10%);
+            font-size: $font-sm;
+        }
+
+        @media all and (max-width: 40rem) {
+            order: 2;
+            padding: 4.5rem 2.5rem;
+        }
+    }
+
+    &__image {
+        position: relative;
+        min-height: 17rem;
+        width: 70%;
+        flex: 3;
+        //    border: 2px solid red;
+
+        &::before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: aquamarine;
+            // background-image: url(../../ncertteardown_logo.jpg);
+            // background-repeat: no-repeat;
+            // background-size: 100%;
+        }
+
+        @media all and (max-width: 40rem) {
+        }
+    }
+}

@@ -1,0 +1,153 @@
+.header {
+    height: 5rem;
+    @media all and (max-width: 640px) {
+        height: 4rem;
+    }
+    background-color: lighten(black, 95%);
+
+    &__logo {
+        background-image: url(../../ncertteardown_logo.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 100%;
+        height: 4.5rem;
+        width: 5rem;
+        margin-left: 1rem;
+        border: 2px solid grey;
+        @media all and (max-width: 640px) {
+            height: 3.4rem;
+            width: 4rem;
+        }
+    }
+
+    &__links {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        // border: solid 2px black;
+        width: 50%;
+        height: 5rem;
+
+        a {
+            color: grey;
+            font-size: $font-lg;
+            margin-bottom: 1.5rem;
+
+            &::after {
+                content: "";
+                position: relative;
+                // top: 0.6rem;
+                bottom: -23px;
+                display: block;
+                height: 5px;
+                width: 100%;
+                border-radius: 5px;
+                background: linear-gradient(
+                    to right,
+                    lighten(rgba(128, 128, 128, 0.847), 30%),
+                    rgba(128, 128, 128, 0.835)
+                );
+                opacity: 0;
+                transition: all 300ms ease-in-out;
+            }
+
+            &:hover {
+                color: darken(grey, 15%);
+                &::after {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    &__menu {
+        z-index: 1;
+        background: darken($color: grey, $amount: 20%);
+        height: 100vh;
+        width: 50vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: all 250ms ease-in-out;
+
+        a {
+            color: darken(white, 20%);
+            padding: 1.5rem;
+            transition: all 300ms ease-in-out;
+            &:last-child {
+                margin-bottom: 5rem;
+            }
+
+            &:hover {
+                color: white;
+                border: 2px solid white;
+            }
+        }
+        &.open {
+            transform: translate(0);
+            visibility: visible;
+        }
+    }
+}
+
+//hamburger menu
+.hamburger {
+    z-index: 2;
+    position: absolute;
+    top: 3%;
+    right: 4%;
+
+    > span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background: black;
+        transition: all 300ms ease-in-out;
+        transform-origin: 2px 1px;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+    &.open {
+        > span:first-child {
+            transform: rotate(45deg);
+            background: white;
+        }
+        > span:nth-child(2) {
+            opacity: 0;
+        }
+        > span:last-child {
+            transform: rotate(-45deg);
+            background: white;
+        }
+    }
+}
+
+//visibility
+
+.hide-for-mobile {
+    @media all and (max-width: 40rem) {
+        display: none;
+    }
+}
+
+.show-for-tablet {
+    @media all and (min-width: 70rem) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @media all and (min-width: 40rem) {
+        display: none;
+    }
+}
