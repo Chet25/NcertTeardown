@@ -1,12 +1,29 @@
 .header {
-    height: 5rem;
-    @media all and (max-width: 640px) {
-        height: 4rem;
-    }
-    background-color: lighten(black, 95%);
+    position: relative;
+
+    &::before{
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: 
+    linear-gradient(
+        to right , rgba(141, 153, 174 , 0.6), rgba(141, 153, 174,0.1)
+    ),
+    url(/images/mock1.jpg);
+    background-size: cover;
+    background-position: left 65%;
+    background-repeat: no-repeat;
+    z-index: -2;
+    opacity: 0.45;
+   }
+
 
     &__logo {
-        background-image: url(../../ncertteardown_logo.jpg);
+        background-image: url(/images/ncertteardown_logo.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -14,7 +31,7 @@
         height: 4.5rem;
         width: 5rem;
         margin-left: 1rem;
-        border: 2px solid grey;
+        // border: 2px solid grey;
         @media all and (max-width: 640px) {
             height: 3.4rem;
             width: 4rem;
@@ -30,7 +47,7 @@
         height: 5rem;
 
         a {
-            color: grey;
+            color: $Darkgrey;
             font-size: $font-lg;
             margin-bottom: 1.5rem;
 
@@ -45,8 +62,8 @@
                 border-radius: 5px;
                 background: linear-gradient(
                     to right,
-                    lighten(rgba(128, 128, 128, 0.847), 30%),
-                    rgba(128, 128, 128, 0.835)
+                    lighten(rgba(128, 128, 128, 0.847), 10%),
+                    rgba(114, 113, 113, 0.835)
                 );
                 opacity: 0;
                 transition: all 300ms ease-in-out;
@@ -63,7 +80,7 @@
 
     &__menu {
         z-index: 1;
-        background: darken($color: grey, $amount: 20%);
+        background:lighten($Darkgrey,5%);
         height: 100vh;
         width: 50vw;
         position: absolute;
@@ -78,7 +95,7 @@
         transition: all 250ms ease-in-out;
 
         a {
-            color: darken(white, 20%);
+            color: $Lightgrey;
             padding: 1.5rem;
             transition: all 300ms ease-in-out;
             &:last-child {
@@ -108,7 +125,7 @@
         display: block;
         width: 26px;
         height: 3px;
-        background: black;
+        background: $Darkgrey;
         transition: all 300ms ease-in-out;
         transform-origin: 2px 1px;
 

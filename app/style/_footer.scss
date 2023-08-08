@@ -1,51 +1,75 @@
 .footer {
-   background: lighten(black, 25%);
+   background: $Darkgrey;
    .contain {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       @media all and (max-width: 40rem) {
-         flex-direction: column;
+         grid-template-columns: 1fr;
+         grid-template-rows: 5rem 1fr;
+         padding-top: 1rem;
+         padding-bottom: 3rem;
+
+         &::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            bottom: 10%;
+            left: 11%;
+            height: 2px;
+            width: 80%;
+            background: linear-gradient(to right, rgba(237, 242, 244, 0.6), rgba(237, 242, 244, 0.2));
+         }
       }
+   }
+   a {
+      color: $Lightgrey;
    }
 
    &__icons {
-      width: 30%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      @media all and (max-width: 40rem) {
-         align-items: center;
-         margin-top: 1.5rem;
-      }
-      a {
-         color: darken(white, 10%);
-         margin-left: 0.5rem;
-         font-size: 17px;
-      }
-      div {
-         padding: 0.6rem;
-      }
+      justify-self: center;
+      align-self: center;
 
-      .yt {
-         transition: all 100ms ease-in-out;
-         &:hover svg path {
-            fill: lighten(red, 10%);
+      a {
+         padding: 1rem;
+         font-size: 1.7rem;
+
+         @media all and (max-width: 40rem) {
+            font-size: 1.5rem;
          }
-         &:hover a {
-            background: linear-gradient(to right, rgb(236, 189, 189), lighten(red, 10%));
+         &:hover{
+            @if (font-size: 1.5rem)
+            {
+               font-size: 1.6rem;
+            }
+            @if (font-size: 1.7rem)
+            {
+               font-size: 1.8rem;
+            }
+         }
+
+      }
+      .fb {
+         transition: all 150ms ease-in-out;
+         &:hover {
+            background: linear-gradient(to right, rgba(24, 119, 242, 1) 50%, lighten(rgb(24, 119, 242), 30%));
             background-clip: text;
             color: transparent;
          }
       }
-      .in {
-         transition: all 100ms ease-in-out;
+      .insta {
+         transition: all 150ms ease-in-out;
+         &:hover {
+            background: linear-gradient(to right, rgba(228, 64, 95, 1) 42%, yellow);
+            background-clip: text;
+            color: transparent;
 
-         &:hover svg path {
-            fill: darken(pink, 30%);
          }
-         &:hover a {
-            background: linear-gradient(to right, darken(yellow, 5%), darken(pink, 25%));
+      }
+      .mail {
+         transition: all 150ms ease-in-out;
+         &:hover {
+            background: linear-gradient(to right, lighten(rgb(187, 0, 27), 10%), lighten(rgb(234, 67, 53), 20%));
             background-clip: text;
             color: transparent;
          }
@@ -56,32 +80,32 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 0 0 0;
+      padding: 2rem 0;
 
       a {
-         margin-bottom: 1.6rem;
-         color: darken(white, 10%);
-         text-align: center;
+         padding: 0.5rem;
+         font-size: 1.3rem;
+         scale: 1;
          transition: all 100ms ease-in-out;
-
-         &:hover {
-            color: transparent;
-            background: linear-gradient(to left, lighten(grey, 10%), lighten(aquamarine, 15%) 50%);
+         &:hover{
+            background: linear-gradient(to right,$Mediumgrey, $Lightgrey);
             background-clip: text;
-            transform: scale(1.02);
+            color: transparent;
+            scale: 1.07;
          }
+      }
+      @media all and (max-width: 40rem) {
+         padding: 0;
       }
    }
    &__button {
-      width: 30%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
+      align-self: center;
+      justify-self: center;
    }
 
    &__copyright {
       position: relative;
-      color: gray;
+      color: $Mediumgrey;
       bottom: 14px;
       right: -91%;
       font-size: $font-sm;
