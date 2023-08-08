@@ -13,7 +13,7 @@
     linear-gradient(
         to right , rgba(141, 153, 174 , 0.6), rgba(141, 153, 174,0.1)
     ),
-    url(/images/mock1.jpg);
+    url(../images/mock1.jpg);
     background-size: cover;
     background-position: left 65%;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
 
 
     &__logo {
-        background-image: url(/images/ncertteardown_logo.jpg);
+        background-image: url(../images/ncertteardown_logo.jpg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
